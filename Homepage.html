@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cakes & Boba</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .intro-text {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        /* Grid layout for products */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 100%;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-carousel {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .product-carousel img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: none;
+        }
+
+        .product-carousel img.active {
+            display: block;
+        }
+
+        .product-card .product-details {
+            padding: 20px;
+        }
+
+        .product-card .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .product-card .product-price {
+            font-size: 18px;
+            color: #4CAF50;
+            margin-top: 10px;
+        }
+
+        .product-card .product-description {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .product-card .view-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card .view-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Next and previous buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Cakes & Boba</h1>
+
+    
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Homepage.html">Home</a>
+        <a href="cakes.html">Cakes</a>
+        <a href="boba.html">Boba</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <br><br><br>
+    <div class="product-card">
+        <div class="product-carousel">
+            <img class="carousel-slide active" src="B1.png" >
+            <img class="carousel-slide" src="B2.png" >
+            <img class="carousel-slide" src="B3.png" >
+            <button class="prev" onclick="changeSlide(-1, this)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1, this)">&#10095;</button>
+        </div>
+        .
+            
+    </div>
+
+    <div class="container">
+        <p class="intro-text">
+            Explore our delicious range of Boba Tea and Cakes! 
+            Click on any product to view more details and make a purchase.
+        </p>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <!-- Product 1 - Classic Milk Tea -->
+            <div class="product-card">
+                <div class="product-carousel">
+                    <img class="carousel-slide active" src="https://assets.epicurious.com/photos/5953ca064919e41593325d97/4:3/w_4992,h_3744,c_limit/bubble_tea_recipe_062817.jpg" alt="Classic Milk Tea">
+                    <img class="carousel-slide" src="https://balancewithjess.com/wp-content/uploads/2022/05/Classic-Milk-Tea-Boba-Feat.jpg" alt="Classic Milk Tea">
+                    <img class="carousel-slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY4Gd03bBSsrpxgZuXFcwMssk1cvxGwGcuMA&s" alt="Classic Milk Tea">
+                    <button class="prev" onclick="changeSlide(-1, this)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1, this)">&#10095;</button>
+                </div>
+                <div class="product-details">
+                    <div class="product-title">BOBA TEA</div>
+                    <div class="product-price">500LKR</div>
+                    <div class="product-description">
+                        A rich and creamy milk tea with chewy boba pearls.
+                    </div>
+                    <a href="boba-tea.html" class="view-button">View Product</a>
+                </div>
+            </div>
+
+            <!-- Product 2 - Green Tea Boba -->
+            <div class="product-card">
+                <div class="product-carousel">
+                    <img class="carousel-slide active" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSuFaUe2_OoBJc8oDKmWRjfRIZesuf2morSA&s" alt="BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1-500x500">
+                    <img class="carousel-slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSX3zlUmTSzUwC-8pECrJX2ludu4_ClMgSnQ&s" alt="Green Tea Boba">
+                    <img class="carousel-slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq2Dir2tU_ZQrBDI9hyIu3pqcATs6kE_F59Q&s" alt="Green Tea Boba">
+                    <button class="prev" onclick="changeSlide(-1, this)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1, this)">&#10095;</button>
+                </div>
+                <div class="product-details">
+                    <div class="product-title">COOKIES.</div>
+                    <div class="product-price">550LKR</div>
+                    <div class="product-description">
+                        A refreshing green tea blend with chewy boba pearls.
+                    </div>
+                    <a href="COOKIES.html" class="view-button">View Product</a>
+                </div>
+            </div>
+
+            <!-- Product 3 - Taro Milk Tea -->
+            <div class="product-card">
+                <div class="product-carousel">
+                    <img class="carousel-slide active" src="https://carveyourcraving.com/wp-content/uploads/2021/01/eggless-tiramisu-at-home.jpg" alt="Taro Milk Tea">
+                    <img class="carousel-slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1nzDJDF1Ti7X1EkS4hlctq4zejPMXd0b2wg&s" alt="Taro Milk Tea">
+                    <img class="carousel-slide" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr4WnYziQDUqVnOmfKubfZ9LBYEZnFMhczyQ&s" alt="Taro Milk Tea">
+                    <button class="prev" onclick="changeSlide(-1, this)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1, this)">&#10095;</button>
+                </div>
+                <div class="product-details">
+                    <div class="product-title">CAKE.</div>
+                    <div class="product-price">600LKR</div>
+                    <div class="product-description">
+                        A delicious taro-flavored milk tea with chewy pearls.
+                    </div>
+                    <a href="cakepage.html" class="view-button">View Product</a>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        // Function to change slides
+        function changeSlide(n, btn) {
+            const carousel = btn.parentElement;
+            const slides = carousel.getElementsByClassName("carousel-slide");
+
+            // Hide all images
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+
+            // Adjust slide index
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+
+            // Show the active slide
+            slides[slideIndex].classList.add("active");
+        }
+    </script>
+
+</body>
+</html>

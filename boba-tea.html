@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Tea - Cakes & Boba</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ddd;
+        }
+
+        .navbar .nav-left a {
+            font-weight: bold;
+        }
+
+        h1 {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 960px;
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .product {
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .product-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Cart button styles */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart:hover {
+            background-color: #45a049;
+        }
+
+        /* Cart window styles */
+        .cart-window {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .cart-window.open {
+            right: 0;
+        }
+
+        .cart-window-header {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .cart-window-items {
+            padding: 10px;
+        }
+
+        .cart-window-item {
+            margin-bottom: 10px;
+        }
+
+        .cart-window-total {
+            padding: 10px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .cart-window-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #4CAF50;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Footer styles */
+.footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+
+        
+    </div>
+
+    <h1>BOBA TEA</h1>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Homepage.html">Home</a>
+        <a href="cakes.html">Cakes</a>
+        <a href="boba.html">Boba</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+    <!-- BUTTON -->
+    <button class="cart" onclick="toggleCartWindow()">View Cart</button>
+
+    <!-- PRODUCTS CONTAINER -->
+    <div class="container">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="https://teacultureoftheworld.com/cdn/shop/articles/taiwan-milk-tea-with-boba-bubble-pearl-on-plastic-2024-02-05-02-27-11-utc_1200x1200.jpg?v=1714023533" alt="Boba Tea 1">
+            <div class="product-details">
+                <h2>Classic Milk Tea</h2>
+                <p>A rich and creamy milk tea with chewy boba pearls.</p>
+                <p class="product-price">500LKR</p>
+                <a href="#" class="product-button" onclick="addToCart('Classic Milk Tea', 500, event)">Add to Cart</a>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="https://greenheartlove.com/wp-content/uploads/2023/05/matcha-boba-tea-5.jpg" alt="Boba Tea 2">
+            <div class="product-details">
+                <h2>Green Tea Boba</h2>
+                <p>A refreshing green tea blend with chewy boba pearls.</p>
+                <p class="product-price">550LKR</p>
+                <a href="#" class="product-button" onclick="addToCart('Green Tea Boba', 550, event)">Add to Cart</a>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="https://raepublic.com/wp-content/uploads/2023/07/Taro-Milk-Tea-Recipe-by-Raepublic-12.jpg" alt="Boba Tea 3">
+            <div class="product-details">
+                <h2>Taro Milk Tea</h2>
+                <p>A delicious taro-flavored milk tea with chewy pearls.</p>
+                <p class="product-price">600LKR</p>
+                <a href="#" class="product-button" onclick="addToCart('Taro Milk Tea', 600, event)">Add to Cart</a>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyDhgE88iF2nbR6c4hXDrd8qoPW_fY9l336w&s" alt="Boba Tea 4">
+            <div class="product-details">
+                <h2>Mango Green Tea</h2>
+                <p>A sweet and tropical mango-flavored green tea with boba pearls.</p>
+                <p class="product-price">650LKR</p>
+                <a href="#" class="product-button" onclick="addToCart('Mango Green Tea', 650, event)">Add to Cart</a>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product">
+            <img src="https://raepublic.com/wp-content/uploads/2023/09/Brown-Sugar-Milk-Tea-by-Raepublic-7.jpg" alt="Boba Tea 5">
+            <div class="product-details">
+                <h2>Brown Sugar Milk Tea</h2>
+                <p>A rich milk tea with a caramelized brown sugar taste.</p>
+                <p class="product-price">700LKR</p>
+                <a href="#" class="product-button" onclick="addToCart('Brown Sugar Milk Tea', 700, event)">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART WINDOW -->
+    <div class="cart-window" id="cartWindow">
+        <div class="cart-window-header">
+            <h2>Cart</h2>
+            <span class="cart-window-close" onclick="toggleCartWindow()">&times;</span>
+        </div>
+        <div class="cart-window-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-window-total" id="cartTotal">
+            Total: 0LKR
+        </div>
+    </div>
+
+    <!-- Add this footer at the end of the body, before the closing </body> tag -->
+<footer>
+    <div class="footer">
+        <p>AAH Dias - WAD Project</p>
+    </div>
+</footer>
+
+
+    <script>
+        // Cart data
+        let cart = [];
+        let total = 0;
+
+        // Function to add an item to the cart
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            total += itemPrice;
+            updateCart();
+        }
+
+        // Function to update the cart display
+        function updateCart() {
+            const cartItemsElement = document.getElementById("cartItems");
+            const cartTotalElement = document.getElementById("cartTotal");
+
+            // Clear the cart items display
+            cartItemsElement.innerHTML = "";
+
+            // Add each item to the cart display
+            cart.forEach((item) => {
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("cart-window-item");
+                itemElement.innerText = item.name + " - " + item.price + "LKR";
+                cartItemsElement.appendChild(itemElement);
+            });
+
+            // Update the total price
+            cartTotalElement.innerText = "Total: " + total + "LKR";
+        }
+
+        // Function to toggle the cart window
+        function toggleCartWindow() {
+            const cartWindow = document.getElementById("cartWindow");
+            cartWindow.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>

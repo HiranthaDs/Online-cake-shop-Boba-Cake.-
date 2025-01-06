@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		body {
+			font-family: 'Montserrat', sans-serif;
+		}
+		.container {
+			width: 960px;
+			max-width: 960px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		}
+
+		.product {
+			display: flex;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			overflow: hidden;
+		}
+		body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+		.product img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+			margin-right: 20px;
+		}
+
+		.product-details {
+			flex: 1;
+			padding: 20px;
+		}
+
+		.product-title {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.product-description {
+			margin-bottom: 10px;
+		}
+
+		.product-price {
+			font-size: 20px;
+			font-weight: bold;
+			color: #4CAF50;
+			margin-bottom: 10px;
+		}
+
+		.product-button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+			.product-button:hover {
+			background-color: #45a049;
+		}
+
+		.cart {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.cart:hover {
+			background-color: #45a049;
+		}
+
+		.cart-window {
+			position: fixed;
+			top: 0;
+			right: -300px;
+			width: 300px;
+			height: 100%;
+			background-color: #fff;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			transition: right 0.3s ease;
+			z-index: 999;
+		}
+
+		.cart-window.open {
+			right: 0;
+		}
+
+		.cart-window-header {
+			padding: 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		.cart-window-items {
+			padding: 10px;
+		}
+
+		.cart-window-item {
+			margin-bottom: 10px;
+		}
+
+		.cart-window-total {
+			padding: 10px;
+			font-weight: bold;
+			text-align: right;
+		}
+
+		.cart-window-close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			color: #4CAF50;
+			font-size: 24px;
+			cursor: pointer;
+		}
+	</style>
+	<title>cart_page_coockies</title>
+</head>
+<body>
+	<h1 align="center">COOKIES</h1>
+
+	<!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Homepage.html">Home</a>
+        <a href="cakes.html">Cakes</a>
+        <a href="boba.html">Boba</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+    </div>
+
+	<!-- BUTTON -->
+	<button class="cart" onclick="toggleCartWindow()">View Cart&nbsp;</button>
+
+	<!-- PRODUCTS CONTAINER -->
+	<div class="container">
+
+		<!-- PRODUCT 01 -->
+		<div class="product">
+			<img src="https://handletheheat.com/wp-content/uploads/2020/10/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1-500x500.jpg" alt="Product 1">
+			<div class="product-details">
+				<h2>Chocolate Chip Cookies</h2>
+				<p>Classic cookie with a perfect balance of buttery dough and sweet chocolate chips, creating a timeless and beloved treat.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Chocolate Chip Cookie', 400, event)">Add to Cart</a>
+			</div>
+		</div>
+
+		<!-- PRODUCT 02 -->
+		<div class="product">
+			<img src="https://mycookiejourney.com/wp-content/uploads/2024/11/ready-for-christmas-whipped-shortbread-cookies-feature.jpg" alt="Product 2">
+			<div class="product-details">
+				<h2>Shortbread Cookies</h2>
+				<p>Buttery, crumbly, and utterly irresistible—shortbread cookies are a timeless delight. Indulge in their rich flavor and delicate texture for a truly heavenly treat.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Shortbread Cookie', 400, event)">Add to Cart</a>
+			</div>
+		</div>
+
+		<!-- PRODUCT 03 -->
+		<div class="product">
+			<img src="https://i0.wp.com/tarynstastingtable.com/wp-content/uploads/2021/06/IMG_2418-1.jpg?fit=4000%2C6000&ssl=1" alt="Product 3">
+			<div class="product-details">
+				<h2>Macaron Cookies</h2>
+				<p>Elegant French delicacy, macaron cookies feature crisp almond shells and a luscious filling. A harmonious blend of flavors and textures make them a delightful treat for any occasion.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Macaron Cookie', 400, event)">Add to Cart</a>
+		  </div>
+		</div>
+
+		<!-- PRODUCT 04 -->
+		<div class="product">
+			<img src="https://www.allrecipes.com/thmb/HFw8HP-C3dQje4ayrBPEiKaHdC4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/223234-macaron-french-macaroon-beauty-4x3-BP-2679copy-af8a0f7412494c479ca6ce4ef08676ec.jpg" alt="Product 4">
+			<div class="product-details">
+				<h2>Macaroon Cookies</h2>
+				<p>Coconut-based and delightfully chewy, macaroon cookies offer a tropical indulgence. Perfect for satisfying your sweet tooth or as a gluten-free option.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Macaroon Cookie', 400, event)">Add to Cart</a>
+		  </div>
+		</div>
+
+		<!-- PRODUCT 05 -->
+		<div class="product">
+			<img src="https://easydessertrecipes.com/wp-content/uploads/2022/11/Featured-Maple-Pecan-Biscotti-1.jpg" alt="Product 5">
+			<div class="product-details">
+				<h2>Biscotti Cookies</h2>
+				<p>Twice-baked Italian delicacy, biscotti cookies are delightfully crunchy and perfect for dipping, offering a satisfying treat with every bite.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Biscotti Cookie', 400, event)">Add to Cart</a>
+			</div>
+		</div>
+
+		<!-- PRODUCT 06 -->
+		<div class="product">
+			<img src="https://sallysbakingaddiction.com/wp-content/uploads/2014/12/christmas-decorated-sugar-cookies.jpg" alt="Product 6">
+			<div class="product-details">
+				<h2>Sugar Cookies</h2>
+				<p>Sugar cookies are classic treats loved for their simplicity and sweet flavor. These cookies bring joy to both kids and adults alike.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Sugar Cookie', 400, event)">Add to Cart</a>
+			</div>
+		</div>
+
+		<!-- PRODUCT 07 -->
+		<div class="product">
+			<img src="https://sugarspunrun.com/wp-content/uploads/2022/04/Oatmeal-Raisin-Cookies-1-of-1.jpg" alt="Product 7">
+			<div class="product-details">
+				<h2>Oatmeal Raisin Cookies</h2>
+				<p>Oatmeal raisin cookies are wholesome and delicious treats. Packed with oats, plump raisins, and warm spices, they offer a comforting and chewy texture with a hint of sweetness. Perfectly balanced and satisfying, these cookies are a timeless favorite for oatmeal lovers.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Oatmeal Raisin Cookie', 400, event)">Add to Cart</a>
+			</div>
+		</div>
+
+		<!-- PRODUCT 08 -->
+		<div class="product">
+			<img src="https://www.theseasonedmom.com/wp-content/uploads/2024/09/williamsburg-old-fashioned-gingerbread-cookies-10.jpg" alt="Product 8">
+			<div class="product-details">
+			  <h2>Gingerbread Cookies</h2>
+				<p>Gingerbread cookies are delightful holiday treats with a warm and spicy flavor. Shaped like festive figures and decorated with icing, these cookies offer a nostalgic taste and a touch of whimsy. Perfect for creating cherished memories and spreading holiday cheer.</p>
+				<p class="product-price">400LKR</p>
+				<a href="#" class="product-button" onclick="addToCart('Gingerbread Cookie', 400, event)">Add to Cart</a>
+			</div>
+		</div>
+
+	<!-- CART WINDOW -->
+	<div class="cart-window" id="cartWindow">
+		<div class="cart-window-header">
+			<h2>Cart</h2>
+			<span class="cart-window-close" onclick="toggleCartWindow()">&times;</span>
+		</div>
+		<div class="cart-window-items" id="cartItems">
+			<!-- Cart items will be dynamically added here -->
+		</div>
+		<div class="cart-window-total" id="cartTotal">
+			Total: 0LKR
+		</div>
+	</div>
+
+	<script>
+		// Cart data
+		let cart = [];
+		let total = 0;
+
+		// Function to add an item to the cart
+		function addToCart(itemName, itemPrice) {
+			cart.push({ name: itemName, price: itemPrice });
+			total += itemPrice;
+			updateCart();
+			 event.stopPropagation();
+		}
+
+		// Function to update the cart display
+		function updateCart() {
+			const cartItemsElement = document.getElementById("cartItems");
+			const cartTotalElement = document.getElementById("cartTotal");
+
+			// Clear the cart items display
+			cartItemsElement.innerHTML = "";
+
+			// Add each item to the cart display
+			cart.forEach((item) => {
+				const itemElement = document.createElement("div");
+				itemElement.classList.add("cart-window-item");
+				itemElement.innerText = item.name + " - " + item.price + "LKR";
+				cartItemsElement.appendChild(itemElement);
+			});
+
+			// Update the total price
+			cartTotalElement.innerText = "Total: " + total + "LKR";
+		}
+
+		// Function to toggle the cart window
+		function toggleCartWindow() {
+			const cartWindow = document.getElementById("cartWindow");
+			cartWindow.classList.toggle("open");
+		}
+	</script>
+</body>
+</html>
